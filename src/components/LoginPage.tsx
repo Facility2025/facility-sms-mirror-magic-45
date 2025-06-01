@@ -153,9 +153,9 @@ const LoginPage = ({ onLogin }: LoginPageProps) => {
       </div>
 
       <div className="relative z-10 flex items-center justify-center min-h-screen p-4">
-        <div className="bg-white rounded-lg shadow-2xl overflow-hidden max-w-4xl w-full flex">
+        <div className="bg-white/95 backdrop-blur-sm rounded-3xl shadow-2xl border border-white/20 overflow-hidden max-w-4xl w-full flex transform hover:scale-[1.02] transition-all duration-300 ease-out">
           {/* Left side - Logo */}
-          <div className="hidden md:flex md:w-1/2 bg-gray-800 items-center justify-center p-8 shadow-[20px_0_40px_rgba(0,0,0,0.8)] relative">
+          <div className="hidden md:flex md:w-1/2 bg-gradient-to-br from-gray-800 via-gray-900 to-black items-center justify-center p-8 shadow-[20px_0_40px_rgba(0,0,0,0.8)] relative">
             <div className="text-center">
               <h1 className="text-4xl font-bold text-white mb-2">
                 <span className="text-cyan-400">SMS</span>

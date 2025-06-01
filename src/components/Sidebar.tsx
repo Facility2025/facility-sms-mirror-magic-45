@@ -14,12 +14,12 @@ const Sidebar = ({ activeSection, onSectionChange }: SidebarProps) => {
   ];
 
   return (
-    <div className="w-64 bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 min-h-screen flex flex-col shadow-2xl border-r border-gray-700/50 backdrop-blur-sm animate-pulse border-white/30 shadow-[0_0_2px_rgba(255,255,255,0.8)]" style={{
-      animation: 'pulse 2s ease-in-out infinite, borderGlow 3s ease-in-out infinite'
+    <div className="w-64 bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 min-h-screen flex flex-col shadow-2xl border-r border-gray-700/50 backdrop-blur-sm border-white/30 shadow-[0_0_2px_rgba(255,255,255,0.8)]" style={{
+      animation: 'borderGlow 3s ease-in-out infinite'
     }}>
       {/* Logo */}
-      <div className="p-6 border-b border-gray-700/50 bg-gradient-to-r from-gray-800/50 to-gray-900/50 backdrop-blur-sm shadow-lg animate-pulse border-white/30 shadow-[0_0_2px_rgba(255,255,255,0.8)]" style={{
-        animation: 'pulse 2s ease-in-out infinite, borderGlow 3s ease-in-out infinite'
+      <div className="p-6 border-b border-gray-700/50 bg-gradient-to-r from-gray-800/50 to-gray-900/50 backdrop-blur-sm shadow-lg border-white/30 shadow-[0_0_2px_rgba(255,255,255,0.8)]" style={{
+        animation: 'borderGlow 3s ease-in-out infinite'
       }}>
         <h1 className="text-2xl font-bold text-white drop-shadow-lg">
           <span className="text-cyan-400 filter drop-shadow-[0_0_8px_rgba(34,211,238,0.6)]">SMS</span>
@@ -35,13 +35,13 @@ const Sidebar = ({ activeSection, onSectionChange }: SidebarProps) => {
             <li key={item.id}>
               <button
                 onClick={() => onSectionChange(item.id)}
-                className={`w-full flex items-center px-4 py-3 rounded-xl text-left transition-all duration-300 transform hover:scale-[1.02] backdrop-blur-sm border border-transparent hover:border-gray-600/30 shadow-lg hover:shadow-xl animate-pulse border-white/30 shadow-[0_0_2px_rgba(255,255,255,0.8)] ${
+                className={`w-full flex items-center px-4 py-3 rounded-xl text-left transition-all duration-300 transform hover:scale-[1.02] backdrop-blur-sm border border-transparent hover:border-gray-600/30 shadow-lg hover:shadow-xl border-white/30 shadow-[0_0_2px_rgba(255,255,255,0.8)] ${
                   activeSection === item.id
                     ? 'bg-gradient-to-r from-cyan-600 to-cyan-500 text-white shadow-[0_0_20px_rgba(34,211,238,0.3)] border-cyan-400/20'
                     : 'text-gray-300 hover:bg-gradient-to-r hover:from-gray-800/80 hover:to-gray-700/80 hover:text-white hover:shadow-[0_0_15px_rgba(255,255,255,0.1)]'
                 }`}
                 style={{
-                  animation: 'pulse 2s ease-in-out infinite, borderGlow 3s ease-in-out infinite'
+                  animation: 'borderGlow 3s ease-in-out infinite'
                 }}
               >
                 <item.icon className="w-5 h-5 mr-3 filter drop-shadow-sm" />
@@ -53,14 +53,14 @@ const Sidebar = ({ activeSection, onSectionChange }: SidebarProps) => {
       </nav>
 
       {/* User info */}
-      <div className="p-4 border-t border-gray-700/50 bg-gradient-to-r from-gray-800/30 to-gray-900/30 backdrop-blur-sm animate-pulse border-white/30 shadow-[0_0_2px_rgba(255,255,255,0.8)]" style={{
-        animation: 'pulse 2s ease-in-out infinite, borderGlow 3s ease-in-out infinite'
+      <div className="p-4 border-t border-gray-700/50 bg-gradient-to-r from-gray-800/30 to-gray-900/30 backdrop-blur-sm border-white/30 shadow-[0_0_2px_rgba(255,255,255,0.8)]" style={{
+        animation: 'borderGlow 3s ease-in-out infinite'
       }}>
-        <div className="flex items-center p-3 rounded-xl bg-gradient-to-r from-gray-800/50 to-gray-700/50 backdrop-blur-sm border border-gray-600/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] animate-pulse border-white/30 shadow-[0_0_2px_rgba(255,255,255,0.8)]" style={{
-          animation: 'pulse 2s ease-in-out infinite, borderGlow 3s ease-in-out infinite'
+        <div className="flex items-center p-3 rounded-xl bg-gradient-to-r from-gray-800/50 to-gray-700/50 backdrop-blur-sm border border-gray-600/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] border-white/30 shadow-[0_0_2px_rgba(255,255,255,0.8)]" style={{
+          animation: 'borderGlow 3s ease-in-out infinite'
         }}>
-          <div className="w-10 h-10 bg-gradient-to-br from-gray-600 to-gray-700 rounded-full flex items-center justify-center shadow-lg border border-gray-500/30 animate-pulse border-white/30 shadow-[0_0_2px_rgba(255,255,255,0.8)]" style={{
-            animation: 'pulse 2s ease-in-out infinite, borderGlow 3s ease-in-out infinite'
+          <div className="w-10 h-10 bg-gradient-to-br from-gray-600 to-gray-700 rounded-full flex items-center justify-center shadow-lg border border-gray-500/30 border-white/30 shadow-[0_0_2px_rgba(255,255,255,0.8)]" style={{
+            animation: 'borderGlow 3s ease-in-out infinite'
           }}>
             <User className="w-6 h-6 text-white filter drop-shadow-sm" />
           </div>

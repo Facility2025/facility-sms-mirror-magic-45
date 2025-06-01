@@ -22,16 +22,16 @@ const Dashboard = () => {
 
       {/* Header */}
       <div className="flex justify-between items-center mb-8 relative z-10">
-        <div className="bg-gradient-to-r from-gray-800/40 to-gray-700/40 backdrop-blur-sm rounded-2xl p-6 border border-gray-600/30 shadow-2xl">
+        <div className="bg-gradient-to-r from-gray-800/40 to-gray-700/40 backdrop-blur-sm rounded-2xl p-6 border border-white/20 transition-all duration-300 hover:border-white/40">
           <h1 className="text-2xl font-bold text-cyan-400 mb-2 filter drop-shadow-[0_0_8px_rgba(34,211,238,0.6)]">Relatório Financeiro e de Mensagens</h1>
         </div>
-        <div className="flex items-center space-x-4 bg-gradient-to-r from-gray-800/40 to-gray-700/40 backdrop-blur-sm rounded-2xl p-4 border border-gray-600/30 shadow-2xl">
+        <div className="flex items-center space-x-4 bg-gradient-to-r from-gray-800/40 to-gray-700/40 backdrop-blur-sm rounded-2xl p-4 border border-white/20 transition-all duration-300 hover:border-white/40">
           <div className="flex items-center space-x-2">
             <label className="text-sm text-gray-300 filter drop-shadow-sm">Data Inicial</label>
             <Input
               type="date"
               defaultValue="2021-05-31"
-              className="bg-gray-800/80 border-gray-600/50 text-white backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300 hover:border-cyan-400/50"
+              className="bg-gray-800/80 border-white/30 text-white backdrop-blur-sm transition-all duration-300 hover:border-white/50"
             />
           </div>
           <div className="flex items-center space-x-2">
@@ -39,17 +39,17 @@ const Dashboard = () => {
             <Input
               type="date"
               defaultValue="2021-05-31"
-              className="bg-gray-800/80 border-gray-600/50 text-white backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300 hover:border-cyan-400/50"
+              className="bg-gray-800/80 border-white/30 text-white backdrop-blur-sm transition-all duration-300 hover:border-white/50"
             />
           </div>
-          <Button className="bg-gradient-to-r from-cyan-600 to-cyan-500 hover:from-cyan-700 hover:to-cyan-600 shadow-lg hover:shadow-[0_0_20px_rgba(34,211,238,0.4)] transition-all duration-300 transform hover:scale-105 border border-cyan-400/20">Buscar</Button>
+          <Button className="bg-gradient-to-r from-cyan-600 to-cyan-500 hover:from-cyan-700 hover:to-cyan-600 transition-all duration-300 transform hover:scale-105 border border-white/20">Buscar</Button>
         </div>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 relative z-10">
         {/* Chart */}
         <div className="lg:col-span-2">
-          <div className="bg-gradient-to-br from-gray-800/60 to-gray-900/60 backdrop-blur-sm rounded-2xl p-6 border border-gray-600/30 shadow-2xl hover:shadow-[0_0_30px_rgba(0,0,0,0.5)] transition-all duration-500 hover:border-gray-500/50 relative overflow-hidden">
+          <div className="bg-gradient-to-br from-gray-800/60 to-gray-900/60 backdrop-blur-sm rounded-2xl p-6 border border-white/20 transition-all duration-500 hover:border-white/40 relative overflow-hidden">
             {/* Inner glow effect */}
             <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/5 to-purple-400/5 rounded-2xl"></div>
             <div className="relative z-10">
@@ -76,16 +76,16 @@ const Dashboard = () => {
               <div className="mt-6 text-center">
                 <p className="text-gray-300 font-medium filter drop-shadow-sm">MENSAGENS</p>
                 <div className="flex justify-center space-x-6 mt-4">
-                  <div className="flex items-center bg-gray-700/30 rounded-full px-3 py-1 backdrop-blur-sm border border-gray-600/30">
-                    <div className="w-4 h-4 bg-cyan-400 rounded mr-2 shadow-lg"></div>
+                  <div className="flex items-center bg-gray-700/30 rounded-full px-3 py-1 backdrop-blur-sm border border-white/20">
+                    <div className="w-4 h-4 bg-cyan-400 rounded mr-2"></div>
                     <span className="text-sm text-gray-300 filter drop-shadow-sm">Custo Total</span>
                   </div>
-                  <div className="flex items-center bg-gray-700/30 rounded-full px-3 py-1 backdrop-blur-sm border border-gray-600/30">
-                    <div className="w-4 h-4 bg-pink-400 rounded mr-2 shadow-lg"></div>
+                  <div className="flex items-center bg-gray-700/30 rounded-full px-3 py-1 backdrop-blur-sm border border-white/20">
+                    <div className="w-4 h-4 bg-pink-400 rounded mr-2"></div>
                     <span className="text-sm text-gray-300 filter drop-shadow-sm">Custo Respostas</span>
                   </div>
-                  <div className="flex items-center bg-gray-700/30 rounded-full px-3 py-1 backdrop-blur-sm border border-gray-600/30">
-                    <div className="w-4 h-4 bg-green-400 rounded mr-2 shadow-lg"></div>
+                  <div className="flex items-center bg-gray-700/30 rounded-full px-3 py-1 backdrop-blur-sm border border-white/20">
+                    <div className="w-4 h-4 bg-green-400 rounded mr-2"></div>
                     <span className="text-sm text-gray-300 filter drop-shadow-sm">Custo Envio</span>
                   </div>
                 </div>
@@ -97,16 +97,16 @@ const Dashboard = () => {
         {/* Stats */}
         <div className="space-y-6">
           {/* Message Stats */}
-          <div className="bg-gradient-to-br from-gray-800/60 to-gray-900/60 backdrop-blur-sm rounded-2xl p-6 border border-gray-600/30 shadow-2xl hover:shadow-[0_0_30px_rgba(0,0,0,0.5)] transition-all duration-500 hover:border-gray-500/50 relative overflow-hidden">
+          <div className="bg-gradient-to-br from-gray-800/60 to-gray-900/60 backdrop-blur-sm rounded-2xl p-6 border border-white/20 transition-all duration-500 hover:border-white/40 relative overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/5 to-orange-400/5 rounded-2xl"></div>
             <div className="relative z-10">
               <h3 className="text-lg font-semibold text-cyan-400 mb-4 filter drop-shadow-[0_0_8px_rgba(34,211,238,0.6)]">• Quantidade de mensagens</h3>
               <div className="grid grid-cols-2 gap-4">
-                <div className="text-center bg-gray-700/30 rounded-xl p-4 backdrop-blur-sm border border-gray-600/30 hover:border-yellow-400/50 transition-all duration-300">
+                <div className="text-center bg-gray-700/30 rounded-xl p-4 backdrop-blur-sm border border-white/20 hover:border-white/40 transition-all duration-300">
                   <div className="text-3xl font-bold text-yellow-400 filter drop-shadow-lg">15</div>
                   <div className="text-sm text-gray-400 filter drop-shadow-sm">ENVIADAS</div>
                 </div>
-                <div className="text-center bg-gray-700/30 rounded-xl p-4 backdrop-blur-sm border border-gray-600/30 hover:border-yellow-400/50 transition-all duration-300">
+                <div className="text-center bg-gray-700/30 rounded-xl p-4 backdrop-blur-sm border border-white/20 hover:border-white/40 transition-all duration-300">
                   <div className="text-3xl font-bold text-yellow-400 filter drop-shadow-lg">5</div>
                   <div className="text-sm text-gray-400 filter drop-shadow-sm">RECEBIDAS</div>
                 </div>
@@ -115,29 +115,29 @@ const Dashboard = () => {
           </div>
 
           {/* Financial Stats */}
-          <div className="bg-gradient-to-br from-gray-800/60 to-gray-900/60 backdrop-blur-sm rounded-2xl p-6 border border-gray-600/30 shadow-2xl hover:shadow-[0_0_30px_rgba(0,0,0,0.5)] transition-all duration-500 hover:border-gray-500/50 relative overflow-hidden">
+          <div className="bg-gradient-to-br from-gray-800/60 to-gray-900/60 backdrop-blur-sm rounded-2xl p-6 border border-white/20 transition-all duration-500 hover:border-white/40 relative overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-green-400/5 to-cyan-400/5 rounded-2xl"></div>
             <div className="relative z-10">
               <div className="space-y-4">
-                <div className="flex justify-between p-3 bg-gray-700/20 rounded-xl backdrop-blur-sm border border-gray-600/20 hover:border-green-400/30 transition-all duration-300">
+                <div className="flex justify-between p-3 bg-gray-700/20 rounded-xl backdrop-blur-sm border border-white/20 hover:border-white/30 transition-all duration-300">
                   <span className="text-green-400 filter drop-shadow-sm">• Total gasto com envio</span>
                   <span className="text-yellow-400 font-bold filter drop-shadow-lg">R$ 2.40</span>
                 </div>
-                <div className="flex justify-between p-3 bg-gray-700/20 rounded-xl backdrop-blur-sm border border-gray-600/20 hover:border-green-400/30 transition-all duration-300">
+                <div className="flex justify-between p-3 bg-gray-700/20 rounded-xl backdrop-blur-sm border border-white/20 hover:border-white/30 transition-all duration-300">
                   <span className="text-green-400 filter drop-shadow-sm">• Total gasto com respostas</span>
                   <span className="text-yellow-400 font-bold filter drop-shadow-lg">R$ 0.80</span>
                 </div>
-                <div className="flex justify-between p-3 bg-gray-700/20 rounded-xl backdrop-blur-sm border border-gray-600/20 hover:border-cyan-400/30 transition-all duration-300">
+                <div className="flex justify-between p-3 bg-gray-700/20 rounded-xl backdrop-blur-sm border border-white/20 hover:border-white/30 transition-all duration-300">
                   <span className="text-cyan-400 filter drop-shadow-sm">• Total gastos Envio + Respostas</span>
                   <span className="text-yellow-400 font-bold filter drop-shadow-lg">R$ 3.20</span>
                 </div>
-                <div className="flex justify-between p-3 bg-gray-700/20 rounded-xl backdrop-blur-sm border border-gray-600/20 hover:border-cyan-400/30 transition-all duration-300">
+                <div className="flex justify-between p-3 bg-gray-700/20 rounded-xl backdrop-blur-sm border border-white/20 hover:border-white/30 transition-all duration-300">
                   <span className="text-cyan-400 filter drop-shadow-sm">• Total investido na plataforma</span>
                   <span className="text-yellow-400 font-bold filter drop-shadow-lg">R$ 18.80</span>
                 </div>
               </div>
               
-              <Button className="w-full mt-6 bg-gradient-to-r from-green-600 to-green-500 hover:from-green-700 hover:to-green-600 font-bold shadow-lg hover:shadow-[0_0_20px_rgba(34,197,94,0.4)] transition-all duration-300 transform hover:scale-105 border border-green-400/20">
+              <Button className="w-full mt-6 bg-gradient-to-r from-green-600 to-green-500 hover:from-green-700 hover:to-green-600 font-bold transition-all duration-300 transform hover:scale-105 border border-white/20">
                 GERAR RELATÓRIO
               </Button>
             </div>

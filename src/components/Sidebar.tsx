@@ -31,22 +31,28 @@ const Sidebar = ({ activeSection, onSectionChange }: SidebarProps) => {
 
       {/* Navigation */}
       <nav className="flex-1 p-4">
-        <ul className="space-y-2">
+        <ul className="space-y-4">
           {menuItems.map((item) => (
             <li key={item.id}>
               <button
                 onClick={() => onSectionChange(item.id)}
-                className={`w-full flex items-center px-4 py-3 rounded-xl text-left transition-all duration-300 transform hover:scale-[1.02] backdrop-blur-sm border border-transparent hover:border-gray-600/30 shadow-lg hover:shadow-xl border-white/30 shadow-[0_0_2px_rgba(255,255,255,0.8)] ${
+                className={`w-full flex items-center px-6 py-4 rounded-xl text-left transition-all duration-300 transform backdrop-blur-sm border-2 relative ${
                   activeSection === item.id
-                    ? 'bg-gradient-to-r from-cyan-600 to-cyan-500 text-white shadow-[0_0_20px_rgba(34,211,238,0.3)] border-cyan-400/20'
-                    : 'text-gray-300 hover:bg-gradient-to-r hover:from-gray-800/80 hover:to-gray-700/80 hover:text-white hover:shadow-[0_0_15px_rgba(255,255,255,0.1)]'
+                    ? 'bg-gradient-to-r from-cyan-600 to-cyan-500 text-white shadow-[0_8px_32px_rgba(0,0,0,0.9),0_16px_64px_rgba(0,0,0,0.8),0_0_0_1px_rgba(255,255,255,0.2),inset_0_2px_0_rgba(255,255,255,0.15)] border-white/20 translate-y-[-6px] hover:translate-y-[-8px]'
+                    : 'bg-gradient-to-r from-black/95 to-gray-900/95 text-gray-300 hover:text-white shadow-[0_12px_40px_rgba(0,0,0,0.95),0_24px_80px_rgba(0,0,0,0.9),0_0_0_1px_rgba(255,255,255,0.1),inset_0_1px_0_rgba(255,255,255,0.1)] border-white/10 hover:border-white/20 translate-y-[-4px] hover:translate-y-[-6px] hover:shadow-[0_16px_48px_rgba(0,0,0,0.98),0_32px_96px_rgba(0,0,0,0.95),0_0_0_1px_rgba(255,255,255,0.15),inset_0_2px_0_rgba(255,255,255,0.12)]'
                 }`}
                 style={{
-                  animation: 'borderGlow 3s ease-in-out infinite'
+                  background: activeSection === item.id 
+                    ? 'linear-gradient(135deg, #0891b2 0%, #0e7490 100%)' 
+                    : 'linear-gradient(135deg, rgba(0,0,0,0.98) 0%, rgba(17,17,17,0.95) 30%, rgba(0,0,0,0.98) 100%)',
+                  filter: 'drop-shadow(0 8px 16px rgba(0,0,0,0.8))',
+                  boxShadow: activeSection === item.id
+                    ? '0 8px 32px rgba(0,0,0,0.9), 0 16px 64px rgba(0,0,0,0.8), 0 0 0 1px rgba(255,255,255,0.2), inset 0 2px 0 rgba(255,255,255,0.15)'
+                    : '0 12px 40px rgba(0,0,0,0.95), 0 24px 80px rgba(0,0,0,0.9), 0 0 0 1px rgba(255,255,255,0.1), inset 0 1px 0 rgba(255,255,255,0.1)'
                 }}
               >
                 <item.icon className="w-5 h-5 mr-3 filter drop-shadow-sm" />
-                <span className="font-medium">{item.label}</span>
+                <span className="font-semibold">{item.label}</span>
               </button>
             </li>
           ))}

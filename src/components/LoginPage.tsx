@@ -106,7 +106,7 @@ const LoginPage = ({
             <div className="max-w-md mx-auto">
               <div className="text-center mb-8">
                 <h2 className="text-2xl font-bold text-gray-800 mb-2">SMS - WX Media Group</h2>
-                <p className="text-gray-600">PAINEL USUÁRIO </p>
+                <p className="text-gray-600">PAINEL  ADMIN</p>
               </div>
 
               <form onSubmit={handleSubmit} className="space-y-6">

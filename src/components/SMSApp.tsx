@@ -5,7 +5,7 @@ import Sidebar from './Sidebar';
 import Dashboard from './Dashboard';
 import ClientsPage from './ClientsPage';
 
-const SMSFacilityApp = () => {
+const SMSApp = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [activeSection, setActiveSection] = useState('dashboard');
 
@@ -36,4 +36,4 @@ const SMSFacilityApp = () => {
   );
 };
 
-export default SMSFacilityApp;
+export default SMSApp;

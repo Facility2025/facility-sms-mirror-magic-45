@@ -19,7 +19,7 @@ const Sidebar = ({ activeSection, onSectionChange }: SidebarProps) => {
       <div className="p-6 border-b border-gray-700">
         <h1 className="text-2xl font-bold text-white">
           <span className="text-cyan-400">SMS</span>
-          <span className="text-gray-300">Facility</span>
+          <span className="text-gray-300">WX Media Group</span>
         </h1>
         <p className="text-cyan-400 text-sm mt-1">PAINEL ADMIN</p>
       </div>

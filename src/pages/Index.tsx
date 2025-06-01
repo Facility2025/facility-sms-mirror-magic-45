@@ -1,8 +1,8 @@
 
-import SMSFacilityApp from "@/components/SMSFacilityApp";
+import SMSApp from "@/components/SMSApp";
 
 const Index = () => {
-  return <SMSFacilityApp />;
+  return <SMSApp />;
 };
 
 export default Index;

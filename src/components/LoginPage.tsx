@@ -160,7 +160,7 @@ const LoginPage = ({ onLogin }: LoginPageProps) => {
             <div className="text-center">
               <h1 className="text-4xl font-bold text-white mb-2">
                 <span className="text-cyan-400">SMS</span>
-                <span className="text-gray-300">Facility</span>
+                <span className="text-gray-300">WX Media Group</span>
               </h1>
             </div>
           </div>
@@ -169,7 +169,7 @@ const LoginPage = ({ onLogin }: LoginPageProps) => {
           <div className="w-full md:w-1/2 p-8">
             <div className="max-w-md mx-auto">
               <div className="text-center mb-8">
-                <h2 className="text-2xl font-bold text-gray-800 mb-2">SMS - Facility</h2>
+                <h2 className="text-2xl font-bold text-gray-800 mb-2">SMS - WX Media Group</h2>
                 <p className="text-gray-600">PAINEL ADMIN</p>
               </div>
 

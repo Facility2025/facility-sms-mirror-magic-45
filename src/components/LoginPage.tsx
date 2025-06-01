@@ -214,6 +214,13 @@ const LoginPage = ({ onLogin }: LoginPageProps) => {
           </div>
         </div>
       </div>
+
+      {/* Footer */}
+      <footer className="absolute bottom-0 left-0 right-0 z-20 bg-black bg-opacity-50 text-white text-center py-3">
+        <p className="text-sm">
+          WXMediaGroup - Todos os direitos reservados 2025© | É extremamente proibida a sua cópia
+        </p>
+      </footer>
     </div>
   );
 };

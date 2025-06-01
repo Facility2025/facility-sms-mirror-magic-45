@@ -62,12 +62,12 @@ const Sidebar = ({ activeSection, onSectionChange }: SidebarProps) => {
         </ul>
       </nav>
 
-      {/* Logo WX Software */}
+      {/* Logo WX Software com efeito flutuante */}
       <div className="p-4 flex justify-center">
-        <div className="p-4 rounded-xl bg-gradient-to-r from-black/90 to-gray-900/90 backdrop-blur-sm border border-gray-600/50 transition-all duration-300 hover:scale-[1.02] transform translate-y-[-4px] shadow-[0_20px_40px_rgba(0,0,0,0.9),0_0_0_1px_rgba(255,255,255,0.1),inset_0_1px_0_rgba(255,255,255,0.1)] hover:shadow-[0_25px_50px_rgba(0,0,0,0.95),0_0_0_1px_rgba(255,255,255,0.2),inset_0_1px_0_rgba(255,255,255,0.15)]" style={{
-          animation: 'borderGlow 3s ease-in-out infinite',
+        <div className="p-4 rounded-xl bg-gradient-to-r from-black/90 to-gray-900/90 backdrop-blur-sm border border-gray-600/50 transition-all duration-500 hover:scale-[1.05] transform translate-y-[-8px] hover:translate-y-[-12px] shadow-[0_25px_50px_rgba(0,0,0,0.9),0_0_0_1px_rgba(255,255,255,0.1),inset_0_1px_0_rgba(255,255,255,0.1)] hover:shadow-[0_35px_70px_rgba(0,0,0,0.95),0_0_0_1px_rgba(255,255,255,0.2),inset_0_1px_0_rgba(255,255,255,0.15)] animate-[float_6s_ease-in-out_infinite]" style={{
+          animation: 'borderGlow 3s ease-in-out infinite, float 6s ease-in-out infinite',
           background: 'linear-gradient(135deg, rgba(0,0,0,0.95) 0%, rgba(17,17,17,0.9) 50%, rgba(0,0,0,0.95) 100%)',
-          filter: 'drop-shadow(0 8px 16px rgba(0,0,0,0.8))'
+          filter: 'drop-shadow(0 12px 24px rgba(0,0,0,0.8))'
         }}>
           <img 
             src="/lovable-uploads/8503f90d-76b5-4dfd-bafa-f03c209a1e9e.png" 
@@ -112,6 +112,15 @@ const Sidebar = ({ activeSection, onSectionChange }: SidebarProps) => {
           50% {
             border-color: rgba(255, 255, 255, 0.6);
             box-shadow: 0 0 4px rgba(255, 255, 255, 1);
+          }
+        }
+        
+        @keyframes float {
+          0%, 100% {
+            transform: translateY(-8px);
+          }
+          50% {
+            transform: translateY(-12px);
           }
         }
       `}</style>

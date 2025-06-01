@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -45,12 +44,12 @@ const LoginPage = ({ onLogin }: LoginPageProps) => {
         ))}
       </div>
 
-      {/* Interactive neural constellation lines */}
+      {/* Interactive neural network with constant movement */}
       <div className="absolute inset-0">
-        <svg className="w-full h-full opacity-30">
+        <svg className="w-full h-full opacity-40">
           <defs>
             <filter id="glow">
-              <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+              <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
               <feMerge> 
                 <feMergeNode in="coloredBlur"/>
                 <feMergeNode in="SourceGraphic"/>
@@ -58,38 +57,41 @@ const LoginPage = ({ onLogin }: LoginPageProps) => {
             </filter>
           </defs>
           
-          {/* Static constellation pattern */}
-          <pattern id="constellation" x="0" y="0" width="200" height="200" patternUnits="userSpaceOnUse">
-            <circle cx="50" cy="50" r="1.5" fill="white" opacity="0.8" />
-            <circle cx="150" cy="100" r="1.5" fill="white" opacity="0.8" />
-            <circle cx="100" cy="150" r="1.5" fill="white" opacity="0.8" />
-            <line x1="50" y1="50" x2="150" y2="100" stroke="white" strokeWidth="0.5" opacity="0.6" />
-            <line x1="150" y1="100" x2="100" y2="150" stroke="white" strokeWidth="0.5" opacity="0.6" />
-          </pattern>
-          <rect width="100%" height="100%" fill="url(#constellation)" />
-          
-          {/* Interactive neural connections that follow mouse */}
-          {[...Array(8)].map((_, i) => {
-            const baseX = (i % 4) * 300 + 150;
-            const baseY = Math.floor(i / 4) * 300 + 150;
-            const mouseInfluence = 0.3;
-            const targetX = baseX + (mousePosition.x - baseX) * mouseInfluence * 0.1;
-            const targetY = baseY + (mousePosition.y - baseY) * mouseInfluence * 0.1;
+          {/* Interactive neural nodes with constant movement */}
+          {[...Array(12)].map((_, i) => {
+            const baseX = (i % 4) * 300 + 200;
+            const baseY = Math.floor(i / 4) * 250 + 150;
+            const mouseInfluence = 0.4;
+            const targetX = baseX + (mousePosition.x - baseX) * mouseInfluence * 0.15;
+            const targetY = baseY + (mousePosition.y - baseY) * mouseInfluence * 0.15;
             
             return (
               <g key={i}>
                 <circle 
                   cx={targetX} 
                   cy={targetY} 
-                  r="2" 
+                  r="3" 
                   fill="cyan" 
-                  opacity="0.7"
+                  opacity="0.8"
                   filter="url(#glow)"
                 >
                   <animate
                     attributeName="r"
-                    values="2;3;2"
-                    dur="2s"
+                    values="2;4;2"
+                    dur={`${1.5 + Math.random()}s`}
+                    repeatCount="indefinite"
+                  />
+                  <animate
+                    attributeName="opacity"
+                    values="0.6;1;0.6"
+                    dur={`${2 + Math.random()}s`}
+                    repeatCount="indefinite"
+                  />
+                  <animateTransform
+                    attributeName="transform"
+                    type="translate"
+                    values={`0,0; ${Math.sin(i) * 10},${Math.cos(i) * 10}; 0,0`}
+                    dur={`${3 + Math.random() * 2}s`}
                     repeatCount="indefinite"
                   />
                 </circle>
@@ -101,23 +103,49 @@ const LoginPage = ({ onLogin }: LoginPageProps) => {
                   x2={mousePosition.x}
                   y2={mousePosition.y}
                   stroke="cyan"
-                  strokeWidth="0.5"
-                  opacity={Math.max(0, 0.8 - Math.sqrt(Math.pow(mousePosition.x - targetX, 2) + Math.pow(mousePosition.y - targetY, 2)) / 500)}
+                  strokeWidth="1"
+                  opacity={Math.max(0, 0.7 - Math.sqrt(Math.pow(mousePosition.x - targetX, 2) + Math.pow(mousePosition.y - targetY, 2)) / 400)}
                   filter="url(#glow)"
-                />
-                
-                {/* Connections between nodes */}
-                {i > 0 && (
-                  <line
-                    x1={targetX}
-                    y1={targetY}
-                    x2={(((i-1) % 4) * 300 + 150) + (mousePosition.x - (((i-1) % 4) * 300 + 150)) * mouseInfluence * 0.1}
-                    y2={(Math.floor((i-1) / 4) * 300 + 150) + (mousePosition.y - (Math.floor((i-1) / 4) * 300 + 150)) * mouseInfluence * 0.1}
-                    stroke="white"
-                    strokeWidth="0.3"
-                    opacity="0.4"
+                >
+                  <animate
+                    attributeName="stroke-width"
+                    values="0.5;1.5;0.5"
+                    dur={`${1 + Math.random()}s`}
+                    repeatCount="indefinite"
                   />
-                )}
+                </line>
+                
+                {/* Connections between nearby nodes */}
+                {[...Array(12)].map((_, j) => {
+                  if (j <= i || j > i + 3) return null;
+                  const otherBaseX = (j % 4) * 300 + 200;
+                  const otherBaseY = Math.floor(j / 4) * 250 + 150;
+                  const otherTargetX = otherBaseX + (mousePosition.x - otherBaseX) * mouseInfluence * 0.15;
+                  const otherTargetY = otherBaseY + (mousePosition.y - otherBaseY) * mouseInfluence * 0.15;
+                  const distance = Math.sqrt(Math.pow(targetX - otherTargetX, 2) + Math.pow(targetY - otherTargetY, 2));
+                  
+                  if (distance > 300) return null;
+                  
+                  return (
+                    <line
+                      key={j}
+                      x1={targetX}
+                      y1={targetY}
+                      x2={otherTargetX}
+                      y2={otherTargetY}
+                      stroke="white"
+                      strokeWidth="0.5"
+                      opacity={Math.max(0, 0.6 - distance / 500)}
+                    >
+                      <animate
+                        attributeName="opacity"
+                        values={`${Math.max(0, 0.3 - distance / 500)};${Math.max(0, 0.8 - distance / 500)};${Math.max(0, 0.3 - distance / 500)}`}
+                        dur={`${2 + Math.random() * 2}s`}
+                        repeatCount="indefinite"
+                      />
+                    </line>
+                  );
+                })}
               </g>
             );
           })}

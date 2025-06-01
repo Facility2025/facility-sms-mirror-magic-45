@@ -26,7 +26,7 @@ const Sidebar = ({ activeSection, onSectionChange }: SidebarProps) => {
           <span className="text-cyan-400 filter drop-shadow-[0_0_8px_rgba(34,211,238,0.6)]">SMS</span>
           <span className="text-gray-300">WX Media Group</span>
         </h1>
-        <p className="text-cyan-400 text-sm mt-1 filter drop-shadow-sm">PAINEL ADMIN</p>
+        <p className="text-cyan-400 text-sm mt-1 filter drop-shadow-sm font-medium">PAINEL ADMIN</p>
       </div>
 
       {/* Navigation */}
@@ -58,6 +58,21 @@ const Sidebar = ({ activeSection, onSectionChange }: SidebarProps) => {
           ))}
         </ul>
       </nav>
+
+      {/* Logo WX Software */}
+      <div className="p-4 flex justify-center">
+        <div className="p-4 rounded-xl bg-gradient-to-r from-black/90 to-gray-900/90 backdrop-blur-sm border border-gray-600/50 transition-all duration-300 hover:scale-[1.02] transform translate-y-[-4px] shadow-[0_20px_40px_rgba(0,0,0,0.9),0_0_0_1px_rgba(255,255,255,0.1),inset_0_1px_0_rgba(255,255,255,0.1)] hover:shadow-[0_25px_50px_rgba(0,0,0,0.95),0_0_0_1px_rgba(255,255,255,0.2),inset_0_1px_0_rgba(255,255,255,0.15)]" style={{
+          animation: 'borderGlow 3s ease-in-out infinite',
+          background: 'linear-gradient(135deg, rgba(0,0,0,0.95) 0%, rgba(17,17,17,0.9) 50%, rgba(0,0,0,0.95) 100%)',
+          filter: 'drop-shadow(0 8px 16px rgba(0,0,0,0.8))'
+        }}>
+          <img 
+            src="/lovable-uploads/8503f90d-76b5-4dfd-bafa-f03c209a1e9e.png" 
+            alt="WX Software Logo" 
+            className="w-16 h-16 object-contain filter drop-shadow-lg"
+          />
+        </div>
+      </div>
 
       {/* User info with enhanced matte black effect */}
       <div className="p-4 border-t border-gray-700/50 bg-gradient-to-r from-gray-800/30 to-gray-900/30 backdrop-blur-sm border-white/30 shadow-[0_0_2px_rgba(255,255,255,0.8)]" style={{

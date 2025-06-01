@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -198,8 +197,7 @@ const LoginPage = ({ onLogin }: LoginPageProps) => {
                   />
                 </div>
 
-                <div className="flex items-center justify-between text-sm">
-                  <a href="#" className="text-cyan-600 hover:text-cyan-800">CRIAR MINHA CONTA</a>
+                <div className="flex justify-end text-sm">
                   <a href="#" className="text-gray-600 hover:text-gray-800">Esqueceu a senha?</a>
                 </div>
 

@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Cell } from 'recharts';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 
@@ -56,11 +56,11 @@ const Dashboard = () => {
                   tickLine={false}
                   tick={{ fill: '#9ca3af', fontSize: 12 }}
                 />
-                <Bar 
-                  dataKey="value" 
-                  radius={[8, 8, 0, 0]}
-                  fill={(entry) => entry.color}
-                />
+                <Bar dataKey="value" radius={[8, 8, 0, 0]}>
+                  {chartData.map((entry, index) => (
+                    <Cell key={`cell-${index}`} fill={entry.color} />
+                  ))}
+                </Bar>
               </BarChart>
             </ResponsiveContainer>
             <div className="mt-6 text-center">
